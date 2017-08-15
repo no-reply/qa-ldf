@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'qa/authorities'
 require 'qa/ldf/empty_search_service'
 

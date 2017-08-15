@@ -1,4 +1,5 @@
 # coding: utf-8
+
 require 'spec_helper'
 require 'qa/ldf/empty_search_service'
 

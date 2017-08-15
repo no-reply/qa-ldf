@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'qa/ldf/version'
 
 require 'qa/ldf/configuration'

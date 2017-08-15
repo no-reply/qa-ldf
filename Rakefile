@@ -25,6 +25,6 @@ YARD::Rake::YardocTask.new do |t|
 end
 
 desc 'Run continious integration'
-task ci: [:rubocop, :spec]
+task ci: %i[rubocop spec]
 
 task default: :ci
