@@ -31,3 +31,12 @@ RSpec/FilePath:
 RSpec/DescribeClass:  
   Exclude:
     - 'spec/integration/**/*'
+
+Lint/ScriptPermission:
+  Exclude:
+    - 'qa-ldf.gemspec'
+    - 'Rakefile'
+
+Layout/IndentHeredoc:
+  Exclude:
+    - 'spec/qa/ldf/authorities/fast_spec.rb'
