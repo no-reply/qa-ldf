@@ -70,8 +70,8 @@ test: &TEST_
   uri_endpoint: 'http://localhost:3000/ldcache/{?subject}'
   uri_root: 'http://localhost:3000/ldcache'
   cache_backend:
-provider: 'repository'
-  production:
+    provider: 'repository'
+production:
   uri_endpoint: 'http://localhost:3000/ldcache/{?subject}'
   uri_root: 'http://localhost:3000/ldcache'
   cache_backend:
