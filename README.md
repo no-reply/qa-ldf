@@ -7,9 +7,9 @@ This sofware providies bindings from [Questioning Authority](https://github.com/
 What Does This Do?
 ------------------
 
-This gem offers a caching version of the [Questioning Authority](https://github.com/samvera/questioning_authority) interface relying on the ActiveTriples LDF caching service. A set of linked data "authorities" are exposed through the Questioning Authority API, and cached for fast recall using the Linked Data Fragments Caching Server. Models on the Hydra/Rails side are provided to handle caching and easy presentation of labels.
+This gem offers a caching version of the [Questioning Authority](https://github.com/samvera/questioning_authority) interface relying on the ActiveTriples LDF caching service. A set of linked data "authorities" are exposed through the Questioning Authority API, and cached for fast recall using the Linked Data Fragments Caching Server. Models on the Samvera/Rails side are provided to handle caching and easy presentation of labels.
 
-Both the QA and LDF APIs are available in mountable forms, so they can run directly in your Hydra application---see below for details.
+Both the QA and LDF APIs are available in mountable forms, so they can run directly in your Samvera application---see below for details.
 
 ### Why use this?
 
@@ -80,7 +80,7 @@ Finally, configure `Qa::LDF` to aim at the cache server:
 Qa::LDF.configure!(endpoint: LinkedDataFragments::Settings.uri_root)
 ```
 
-In a Hydra app, the best place to put this is in an initializer, e.g. `config/initializers/hydra_config.rb`.
+In a Samvera app, the best place to put this is in an initializer, e.g. `config/initializers/samvera_config.rb`.
 
 #### Datasets
 
@@ -92,7 +92,7 @@ The caching server provides several backends for persistent storage, we recommen
 
 #### LDF caching as an external service.
 
-The LDF caching server can run independently from your Hydra application as a lightweight, generic [Rack](http://www.rubydoc.info/github/rack/rack/file/SPEC) application, or as a standalone Rails app. You may want to deploy the server in this way so it can run on separate hardware, or to segregate Linked Data "follow your nose" network traffic.
+The LDF caching server can run independently from your Samvera application as a lightweight, generic [Rack](http://www.rubydoc.info/github/rack/rack/file/SPEC) application, or as a standalone Rails app. You may want to deploy the server in this way so it can run on separate hardware, or to segregate Linked Data "follow your nose" network traffic.
 
 The simplest way to get a working application that will run on any Rack-compatible server is to create a `./config.ru` containing:
 
