@@ -2,12 +2,12 @@ QuestioningAuthority::LDF
 =========================
 [![Apache 2.0 License](http://img.shields.io/badge/APACHE2-license-blue.svg)](./LICENSE)
 
-This sofware providies bindings from [Questioning Authority](https://github.com/projecthydra-labs/questioning_authority) to the [linked data caching fragment server](https://github.com/ActiveTriples/linked-data-fragments) for fast query of RDF-based authorities.
+This sofware providies bindings from [Questioning Authority](https://github.com/samvera/questioning_authority) to the [linked data caching fragment server](https://github.com/ActiveTriples/linked-data-fragments) for fast query of RDF-based authorities.
 
 What Does This Do?
 ------------------
 
-This gem offers a caching version of the [Questioning Authority](https://github.com/projecthydra-labs/questioning_authority) interface relying on the ActiveTriples LDF caching service. A set of linked data "authorities" are exposed through the Questioning Authority API, and cached for fast recall using the Linked Data Fragments Caching Server. Models on the Hydra/Rails side are provided to handle caching and easy presentation of labels.
+This gem offers a caching version of the [Questioning Authority](https://github.com/samvera/questioning_authority) interface relying on the ActiveTriples LDF caching service. A set of linked data "authorities" are exposed through the Questioning Authority API, and cached for fast recall using the Linked Data Fragments Caching Server. Models on the Hydra/Rails side are provided to handle caching and easy presentation of labels.
 
 Both the QA and LDF APIs are available in mountable forms, so they can run directly in your Hydra application---see below for details.
 
@@ -112,7 +112,7 @@ Authority Sources
 
 ### LCNAF
 
-A caching interface to the Library of Congress Name Authority File is implemented as a QA authority as `Qa::LDF::LCNames`. This uses the same search code deployed by the generic LC authorities provided by QA, but provides `id.loc.gov` results. This authority is aliased to `Qa::Lcnames` pending closure of https://github.com/projecthydra-labs/questioning_authority/issues/137. It is available at the endpoint `authorities/search/lcnames`.
+A caching interface to the Library of Congress Name Authority File is implemented as a QA authority as `Qa::LDF::LCNames`. This uses the same search code deployed by the generic LC authorities provided by QA, but provides `id.loc.gov` results. This authority is aliased to `Qa::Lcnames` pending closure of https://github.com/samvera/questioning_authority/issues/137. It is available at the endpoint `authorities/search/lcnames`.
 
 ### FAST
 
@@ -147,7 +147,7 @@ In the partial, specify the data source:
   required: f.object.required?(key) %>
 ```
 
-Hyrax comes with [Questioning Authority](https://github.com/projecthydra-labs/questioning_authority) which provides some RESTful endpoints that you can use as autocomplete sources. Checkout the QA README for a list of the authorities that it comes with (you can even make your own).
+Hyrax comes with [Questioning Authority](https://github.com/samvera/questioning_authority) which provides some RESTful endpoints that you can use as autocomplete sources. Checkout the QA README for a list of the authorities that it comes with (you can even make your own).
 
 When the Hyrax form for your `Work` loads the autocomplete JavaScript is initialized for certain fields. For the `Creator` field that we created a partial for, all we needed to was add the data attribute and the autocomplete is activated.
 
@@ -169,10 +169,10 @@ autocomplete.setup();
 
 You just need to pass the fields when creating an Autocomplete instance.
 
-Autocomplete in Hyrax currently uses jQuery UI Autocomplete. Hyrax stores the [jQuery UI Autocomplete options and source](http://jqueryui.com/autocomplete/#remote-jsonp) in ES6 classes. Unless you need to make specific query that requires you to change the options and source, the JS will use a default query from [default.es6](https://github.com/projecthydra-labs/hyrax/blob/master/app/assets/javascripts/hyrax/autocomplete/default.es6). This should just work with the QA vocabs.
+Autocomplete in Hyrax currently uses jQuery UI Autocomplete. Hyrax stores the [jQuery UI Autocomplete options and source](http://jqueryui.com/autocomplete/#remote-jsonp) in ES6 classes. Unless you need to make specific query that requires you to change the options and source, the JS will use a default query from [default.es6](https://github.com/samvera/hyrax/blob/master/app/assets/javascripts/hyrax/autocomplete/default.es6). This should just work with the QA vocabs.
 
-The autocomplete for the `Work` field requires different a different source and options so it has a different class: [work.es6](https://github.com/projecthydra-labs/hyrax/blob/master/app/assets/javascripts/hyrax/autocomplete/work.es6).
-After creating your own class, you will need to import it and an additional case to the autocomplete method in [autocomplete.es6](https://github.com/projecthydra-labs/hyrax/blob/master/app/assets/javascripts/hyrax/autocomplete.es6)
+The autocomplete for the `Work` field requires different a different source and options so it has a different class: [work.es6](https://github.com/samvera/hyrax/blob/master/app/assets/javascripts/hyrax/autocomplete/work.es6).
+After creating your own class, you will need to import it and an additional case to the autocomplete method in [autocomplete.es6](https://github.com/samvera/hyrax/blob/master/app/assets/javascripts/hyrax/autocomplete.es6)
 
 #### Adding Controlled Vocabulary Dropdown Options
 
