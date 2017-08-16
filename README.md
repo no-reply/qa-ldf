@@ -47,6 +47,16 @@ Rails.application.routes.draw do
   # ...
 end
 ```
+
+Require the CacheServer and Repository in an initializer:
+
+```ruby
+# config/initializers/qa_ldf.rb
+
+require 'linked_data_fragments/cache_server'
+require 'linked_data_fragments/repository'
+```
+
 And add an `ldf.yml` configuration.
 
 ```yaml
