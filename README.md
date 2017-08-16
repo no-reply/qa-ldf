@@ -98,7 +98,7 @@ The cache server uses [RDF Datasets](http://www.hydra-cg.com/spec/latest/linked-
 
 #### Selecting a Triplestore Backend
 
-The caching server provides several backends for persistent storage, we recommend using the Marmotta backend, but a Blazegraph backend (untested with this gem) is also provided. Read the [ActiveTriples::LinkedDataFragments documentation on backend configuration](https://github.com/ActiveTriples/linked-data-fragments#configuration) for more.
+The caching server provides two backends for persistent storage, we recommend using the Marmotta backend, but a Blazegraph backend (untested with this gem) is also provided. Read the [ActiveTriples::LinkedDataFragments documentation on backend configuration](https://github.com/ActiveTriples/linked-data-fragments#configuration) for more info on these. There is also an in-memory 'repository' backend, used for development / test environments in the sample ldp.yml above.
 
 #### LDF caching as an external service.
 
